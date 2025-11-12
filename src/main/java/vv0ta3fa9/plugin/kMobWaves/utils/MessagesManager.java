@@ -24,7 +24,21 @@ public class MessagesManager {
         if (!messagesConfigFile.exists()) {
             plugin.saveResource("messages.yml", false);
         }
-        messagesconfig = YamlConfiguration.loadConfiguration(messagesConfigFile);
+        reloadMessages();
+    }
+    
+    /**
+     * Reloads the messages configuration from file
+     */
+    public void reloadMessages() {
+        if (messagesConfigFile == null) {
+            messagesConfigFile = new File(plugin.getDataFolder(), "messages.yml");
+        }
+        if (messagesConfigFile.exists()) {
+            messagesconfig = YamlConfiguration.loadConfiguration(messagesConfigFile);
+        } else {
+            plugin.getLogger().warning("Messages file not found: " + messagesConfigFile.getPath());
+        }
     }
 
     private String getMessage(String path, String defaultValue) {
@@ -48,5 +62,20 @@ public class MessagesManager {
         return getMessage("another.info", "&eОсталось &a%count% &eсуществ.")
                 .replace("%count%", count)
                 .replace("%wave%", currentWave);
+    }
+    
+    // ---- highlight ---- //
+    public String highlightSuccess(int count, String visibility) {
+        return getMessage("highlight.success", "&aПодсвечено %count% мобов %visibility%! Подсветка исчезнет через 10 секунд.")
+                .replace("%count%", String.valueOf(count))
+                .replace("%visibility%", visibility);
+    }
+    
+    public String highlightVisibilityAdmin() {
+        return getMessage("highlight.visibility-admin", "только для вас");
+    }
+    
+    public String highlightVisibilityAll() {
+        return getMessage("highlight.visibility-all", "для всех игроков");
     }
 }
