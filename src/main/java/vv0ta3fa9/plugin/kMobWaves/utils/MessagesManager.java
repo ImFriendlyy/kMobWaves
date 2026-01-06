@@ -1,0 +1,83 @@
+package vv0ta3fa9.plugin.kMobWaves.utils;
+
+import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import vv0ta3fa9.plugin.kMobWaves.KMobWaves;
+import vv0ta3fa9.plugin.kMobWaves.utils.Runner.Runner;
+
+import java.io.File;
+
+public class MessagesManager {
+    private final KMobWaves plugin;
+    private Runner runner;
+    private FileConfiguration messagesconfig;
+    private File messagesConfigFile;
+    private String language;
+
+    public MessagesManager(KMobWaves plugin, Runner runner) {
+        this.runner = runner;
+        this.plugin = plugin;
+        this.language = plugin.getConfigManager().getLanguage();
+        loadFiles();
+    }
+
+    private void loadFiles() {
+        messagesConfigFile = new File(plugin.getDataFolder(),
+                "messages_" + language + ".yml"
+        );
+
+        if (!messagesConfigFile.exists()) {
+            plugin.saveResource("messages_ru.yml", false);
+        }
+        reloadMessages();
+    }
+    
+    public void reloadMessages() {
+        Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
+            if (messagesConfigFile == null) {
+                messagesConfigFile = new File(plugin.getDataFolder(), "messages_ru.yml");
+            }
+            if (messagesConfigFile.exists()) {
+                messagesconfig = YamlConfiguration.loadConfiguration(messagesConfigFile);
+            } else {
+                plugin.getLogger().warning("Messages file not found: " + messagesConfigFile.getPath());
+            }
+        });
+    }
+
+    private String getMessage(String path, String defaultValue) {
+        if (messagesconfig == null) return defaultValue;
+        return messagesconfig.getString(path, defaultValue);
+    }
+
+    public String nopermission() {
+        return getMessage("system.no-permission", "§cУ тебя нет прав.");
+    }
+    public String reloadplugin() {
+        return getMessage("system.reload-plugin", "§aБип-пуп успешная перезагрузкая");
+    }
+    public String playeronly() {
+        return messagesconfig.getString("system.console-only", "§cЭта команда доступна только из консоли!");
+    }
+
+    public String info(String count, String currentWave) {
+        return getMessage("another.info", "&eОсталось &a%count% &eсуществ.")
+                .replace("%count%", count)
+                .replace("%wave%", currentWave);
+    }
+    
+    public String highlightSuccess(int count, String visibility) {
+        return getMessage("highlight.success", "&aПодсвечено %count% мобов %visibility%! Подсветка исчезнет через 10 секунд.")
+                .replace("%count%", String.valueOf(count))
+                .replace("%visibility%", visibility);
+    }
+    
+    public String highlightVisibilityAdmin() {
+        return getMessage("highlight.visibility-admin", "только для вас");
+    }
+    
+    public String highlightVisibilityAll() {
+        return getMessage("highlight.visibility-all", "для всех игроков");
+    }
+}
