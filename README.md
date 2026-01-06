@@ -4,9 +4,9 @@
 
 **Плагин для управления волнами мобов на Minecraft серверах**
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Kanorto/kMobWaves/build.yml?branch=main&style=for-the-badge&logo=github&label=Build)](https://github.com/Kanorto/kMobWaves/actions/workflows/build.yml)
-[![Latest Release](https://img.shields.io/github/v/release/Kanorto/kMobWaves?style=for-the-badge&logo=github&label=Release)](https://github.com/Kanorto/kMobWaves/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/Kanorto/kMobWaves/total?style=for-the-badge&logo=github&label=Downloads)](https://github.com/Kanorto/kMobWaves/releases)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/ImFriendlyy/kMobWaves/build.yml?branch=main&style=for-the-badge&logo=github&label=Build)](https://github.com/ImFriendlyy/kMobWaves/actions/workflows/build.yml)
+[![Latest Release](https://img.shields.io/github/v/release/ImFriendlyy/kMobWaves?style=for-the-badge&logo=github&label=Release)](https://github.com/ImFriendlyy/kMobWaves/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/ImFriendlyy/kMobWaves/total?style=for-the-badge&logo=github&label=Downloads)](https://github.com/ImFriendlyy/kMobWaves/releases)
 [![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-red?style=for-the-badge)](LICENSE)
 
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21+-green?style=for-the-badge&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
@@ -15,9 +15,9 @@
 
 ---
 
-**[📥 Скачать](https://github.com/Kanorto/kMobWaves/releases/latest)** • 
+**[📥 Скачать](https://github.com/ImFriendlyy/kMobWaves/releases/latest)** • 
 **[📖 Документация](#-документация)** • 
-**[🐛 Баг-репорты](https://github.com/Kanorto/kMobWaves/issues)** • 
+**[🐛 Баг-репорты](https://github.com/ImFriendlyy/kMobWaves/issues)** • 
 **[💬 Поддержка](https://t.me/kapybarkaaa)**
 
 </div>
@@ -70,7 +70,7 @@
 
 ## 📥 Установка
 
-1. **Скачайте** последнюю версию из [Releases](https://github.com/Kanorto/kMobWaves/releases/latest)
+1. **Скачайте** последнюю версию из [Releases](https://github.com/ImFriendlyy/kMobWaves/releases/latest)
 2. **Поместите** JAR-файл в папку `plugins/` вашего сервера
 3. **Установите** MythicMobs (обязательно)
 4. **Перезапустите** сервер
@@ -243,7 +243,7 @@ Waves:
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/Kanorto/kMobWaves.git
+git clone https://github.com/ImFriendlyy/kMobWaves.git
 cd kMobWaves
 
 # Сборка с Gradle
@@ -257,41 +257,6 @@ mvn clean package
 
 ---
 
-## 📜 История изменений
-
-### 📦 v2026.01.04.2223 (Последняя)
-- 🧹 Очистка кодовой базы
-- 📄 Удаление неактуальных markdown файлов
-
-### 📦 v2025.11.13.1956
-- 🐛 Исправлены предупреждения null serializer
-- 🐛 Исправлена рассинхронизация счётчика мобов в BossBar
-- ♻️ Рефакторинг логики обновления BossBar
-
-### 📦 v2025.11.12.2024
-- 🐛 Исправлен краш null serializer в ProtocolLib
-- 🔧 Улучшена обработка подсветки мобов
-
-### 📦 v2025.11.12.1954
-- 🐛 Исправлена ClassCastException в ProtocolLib highlight
-- 🔧 Корректное использование metadata serializers
-
-### 📦 v2025.11.12.1908
-- ✨ Добавлен автоматический Maven релиз при пуше в main
-- 🔧 Улучшена CI/CD интеграция
-
-### 📦 v1.1.2
-- 🐛 Исправления ошибок
-- 🔧 Улучшения стабильности
-
-### 📦 v1.1.1
-- ✨ Расширенная система конфигурации
-- ✨ Режимы BossBar (ALL, ADMIN, NONE)
-- ✨ Команда highlight для администраторов
-- ✨ Улучшенное управление волнами
-
----
-
 ## 🤝 Поддержка
 
 <div align="center">
@@ -299,7 +264,7 @@ mvn clean package
 | Канал | Ссылка |
 |-------|--------|
 | 💬 **Telegram** | [@kapybarkaaa](https://t.me/kapybarkaaa) |
-| 🐛 **Issues** | [GitHub Issues](https://github.com/Kanorto/kMobWaves/issues) |
+| 🐛 **Issues** | [GitHub Issues](https://github.com/ImFriendlyy/kMobWaves/issues) |
 | 📧 **Автор** | vv0t3afa9 |
 
 </div>
@@ -310,7 +275,7 @@ mvn clean package
 
 **Сделано с ❤️ для Minecraft сообщества**
 
-[![GitHub stars](https://img.shields.io/github/stars/Kanorto/kMobWaves?style=social)](https://github.com/Kanorto/kMobWaves/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Kanorto/kMobWaves?style=social)](https://github.com/Kanorto/kMobWaves/network/members)
+[![GitHub stars](https://img.shields.io/github/stars/ImFriendlyy/kMobWaves?style=social)](https://github.com/Im/kMobWaves/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/ImFriendlyy/kMobWaves?style=social)](https://github.com/ImFriendlyy/kMobWaves/network/members)
 
 </div>
